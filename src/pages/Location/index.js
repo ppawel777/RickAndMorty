@@ -1,4 +1,4 @@
-import LocationComponent from '../../components/RickAndMorty/Location/Location.jsx'
+import LocationComponent from '../../components/Location/Location.jsx'
 import { useNavigate } from "react-router-dom";
 
 const Location = () => {

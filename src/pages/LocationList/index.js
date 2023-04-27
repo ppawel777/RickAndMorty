@@ -1,4 +1,4 @@
-import LocationListComponent from '../../components/RickAndMorty/Location/LocationList.jsx'
+import LocationListComponent from '../../components/Location/LocationList.jsx'
 
 const LocationList = () => {
 	return (

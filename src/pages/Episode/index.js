@@ -1,4 +1,4 @@
-import EpisodeComponent from '../../components/RickAndMorty/Episode/Episode.jsx'
+import EpisodeComponent from '../../components/Episode/Episode.jsx'
 import { useNavigate } from "react-router-dom";
 
 const Episode = () => {

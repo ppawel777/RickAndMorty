@@ -1,4 +1,4 @@
-import EpisodeListComponent from '../../components/RickAndMorty/Episode/EpisodeList.jsx'
+import EpisodeListComponent from '../../components/Episode/EpisodeList.jsx'
 
 const EpisodeList = () => {
 	return (

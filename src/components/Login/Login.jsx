@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Flex } from '@mantine/core';
-import { useAuth } from '../../../context/AuthProvider';
+import { useAuth } from '../../context/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {

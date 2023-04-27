@@ -1,4 +1,4 @@
-import LoginComponent from '../../components/RickAndMorty/Login/Login.jsx'
+import LoginComponent from '../../components/Login/Login.jsx'
 
 const Login = () => {
 	return (

@@ -1,4 +1,4 @@
-import HeroesComponent from '../../components/RickAndMorty/Heroes/Heroes.jsx'
+import HeroesComponent from '../../components/Heroes/Heroes.jsx'
 import { useNavigate } from "react-router-dom";
 
 const Heroes = () => {

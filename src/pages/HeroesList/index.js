@@ -1,4 +1,4 @@
-import HeroesListComponent from '../../components/RickAndMorty/Heroes/HeroesList.jsx'
+import HeroesListComponent from '../../components/Heroes/HeroesList.jsx'
 // import { Flex } from '@mantine/core';
 
 const HeroesList = () => {
