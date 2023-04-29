@@ -6,7 +6,7 @@ import useResponseData from '../../hooks/useResponseData';
 
 const Location = () => {
   const params = useParams();
-  const { data, isLoading } = useResponseData('episode', +params.id)
+  const { data, isLoading } = useResponseData('location', +params.id)
 
   return (
     <>

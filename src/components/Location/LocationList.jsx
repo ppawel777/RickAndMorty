@@ -10,7 +10,7 @@ const LocationList = () => {
     loading,
     error,
     hasMore,
-  } = useResponseDataList('episode', pageNumber)
+  } = useResponseDataList('location', pageNumber)
 
   const observer = useRef();
 
