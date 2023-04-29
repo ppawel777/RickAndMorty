@@ -1,19 +1,20 @@
+import React, { lazy } from 'react';
 import { Route, Routes } from "react-router-dom";
 
-import NotFound from '../pages/NotFound'
 import MainLayout from "../layouts/MainLayout";
-import Home from "../pages/Home";
-import HeroesList from '../pages/HeroesList'
-import Heroes from '../pages/Heroes'
-import LocationList from '../pages/LocationList'
-import Location from '../pages/Location'
-import EpisodeList from '../pages/EpisodeList'
-import Episode from '../pages/Episode'
-import Login from '../pages/Login'
-import { PrivateRoute } from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
+
+const HeroesList = lazy(() => import('../pages/HeroesList'));
+const Heroes = lazy(() => import('../pages/Heroes'));
+const LocationList = lazy(() => import('../pages/LocationList'));
+const Location = lazy(() => import('../pages/Location'));
+const EpisodeList = lazy(() => import('../pages/EpisodeList'));
+const Episode = lazy(() => import('../pages/Episode'));
+const Login = lazy(() => import('../pages/Login'));
+const NotFound = lazy(() => import('../pages/NotFound'));
+const Home = lazy(() => import('../pages/Home'));
 
 const RoutesComponent = () => {
-
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>

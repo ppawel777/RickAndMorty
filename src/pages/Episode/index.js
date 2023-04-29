@@ -1,5 +1,6 @@
 import EpisodeComponent from '../../components/Episode/Episode.jsx'
 import { useNavigate } from "react-router-dom";
+import ErrorBoundary from '../../ErrorBoundary.js'
 
 const Episode = () => {
 	const navigate = useNavigate();
@@ -11,7 +12,9 @@ const Episode = () => {
 		<>
 			<h3>Подробнее об эпизоде </h3>
 			<button onClick={ goBack }>Назад</button>
-			<EpisodeComponent />
+			<ErrorBoundary>
+				<EpisodeComponent />
+			</ErrorBoundary>
 		</>
 	)
 }

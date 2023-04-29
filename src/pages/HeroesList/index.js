@@ -1,11 +1,18 @@
 import HeroesListComponent from '../../components/Heroes/HeroesList.jsx'
-// import { Flex } from '@mantine/core';
+import ErrorBoundary from '../../ErrorBoundary.js'
+// import ComponentLazy from '../../components/ComponentLazy.js';
 
 const HeroesList = () => {
 	return (
 		<>
 			<h3>Персонажи мультсериала Рик и Морти</h3>
-			<div className='rm-heroes_list__wrap'><HeroesListComponent /></div>
+			{/* <div className='rm-heroes_list__wrap'><ComponentLazy dir="Heroes" name="HeroesList" /></div> */}
+			
+			<div className='rm-heroes_list__wrap'>
+				<ErrorBoundary>
+					<HeroesListComponent />
+				</ErrorBoundary>
+			</div>
 		</>
 	)
 }

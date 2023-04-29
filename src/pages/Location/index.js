@@ -1,5 +1,6 @@
 import LocationComponent from '../../components/Location/Location.jsx'
 import { useNavigate } from "react-router-dom";
+import ErrorBoundary from '../../ErrorBoundary.js'
 
 const Location = () => {
 	const navigate = useNavigate();
@@ -11,7 +12,9 @@ const Location = () => {
 		<>
 			<h3>Подробнее о локации</h3>
 			<button onClick={ goBack }>Назад</button>
-			<LocationComponent />
+			<ErrorBoundary>
+				<LocationComponent />
+			</ErrorBoundary>
 		</>
 	)
 }

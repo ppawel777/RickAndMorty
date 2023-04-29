@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from "../context/AuthProvider"
 
-export const PrivateRoute = ({ children }) => {
+const PrivateRoute = ({ children }) => {
   const auth = useAuth();
   const location = useLocation()
 
@@ -9,3 +9,5 @@ export const PrivateRoute = ({ children }) => {
 
   return children
 }
+
+export default PrivateRoute

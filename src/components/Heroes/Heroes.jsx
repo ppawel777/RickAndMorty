@@ -1,37 +1,37 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 
-import { Card, Image, Text, Badge, Group } from '@mantine/core';
-import dataJson from './characters.json';
+import { Card, Image, Text, Badge, Group, Loader } from '@mantine/core';
+import useResponseData from '../../hooks/useResponseData';
 
 const Heroes = () => {
   const params = useParams();
-  const data = JSON.parse(JSON.stringify(dataJson));
-  const heroes = data.find(f => f.id === +params.id) || null;
+  const { data, isLoading } = useResponseData('character', +params.id)
 
   return (
     <>
     {
-      heroes && 
+      isLoading ? <Loader /> :
+      data &&
       <Card shadow="sm" padding="sm" radius="md" className='rm-heroes_one'>
         <Card.Section>
           <Image
-            src={ heroes.image }
+            src={ data.image }
             maw={300} 
             width="100%"
             mx="auto"
-            alt={ heroes.name }
+            alt={ data.name }
             withPlaceholder
           />
         </Card.Section>
         <Group position="apart" mt="md" mb="xs">
-          <Text weight={500}>{ heroes.name }</Text>
-          <Badge color="pink" variant="light">{ heroes.status }</Badge>
+          <Text weight={500}>{ data.name }</Text>
+          <Badge color="pink" variant="light">{ data.status }</Badge>
         </Group>
         <Text size="sm" color="dimmed">
-          <p>Gender: { heroes.gender }</p>
-          <p>Species: { heroes.species }</p>
-          <p>Type: { heroes.type }</p>
+          <p>Gender: { data.gender }</p>
+          <p>Species: { data.species }</p>
+          <p>Type: { data.type }</p>
         </Text>
       </Card>
     }

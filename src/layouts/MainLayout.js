@@ -1,8 +1,9 @@
+import React, { Suspense } from 'react'
 import { Outlet } from "react-router-dom"
 import NavBar from "./components/Navbar";
 import LoginIn from "./components/LoginIn";
 import { AuthStatus } from "../components/AuthStatus";
-import { Flex } from '@mantine/core';
+import { Flex, Loader  } from '@mantine/core';
 
 import './index.scss';
 
@@ -23,7 +24,9 @@ const MainLayout = () => {
           <AuthStatus />
         </Flex>
       </div>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   )
 }

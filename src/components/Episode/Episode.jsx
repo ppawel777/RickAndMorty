@@ -1,34 +1,34 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 
-import { Card, Image, Text, Group } from '@mantine/core';
-import dataJson from './episode.json';
+import { Card, Image, Text, Group, Loader } from '@mantine/core';
+import useResponseData from '../../hooks/useResponseData';
 
 const Episode = () => {
   const params = useParams();
-  const data = JSON.parse(JSON.stringify(dataJson));
-  const episode = data.find(f => f.id === +params.id) || null;
+  const { data, isLoading } = useResponseData('episode', +params.id)
 
   return (
     <>
     {
-      episode && 
+      isLoading ? <Loader /> :
+      data &&
       <Card shadow="sm" padding="sm" radius="md" className='rm-heroes_one'>
         <Card.Section>
           <Image
             height="300px"
             width="100%"
             mx="auto"
-            alt={ episode.name }
+            alt={ data.name }
             withPlaceholder
           />
         </Card.Section>
         <Group position="apart" mt="md" mb="xs">
-          <Text weight={500}>{ episode.name }</Text>
+          <Text weight={500}>{ data.name }</Text>
         </Group>
         <Text size="sm" color="dimmed">
-          <p>Air_date: { episode.air_date }</p>
-          <p>Episode: { episode.episode }</p>
+          <p>Air_date: { data.air_date }</p>
+          <p>Episode: { data.episode }</p>
         </Text>
       </Card>
     }
